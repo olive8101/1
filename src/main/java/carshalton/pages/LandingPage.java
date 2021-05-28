@@ -57,12 +57,12 @@ public class LandingPage extends ExtendedPageObject {
         waitForPageLoaded();
     }
 
-    @FindBy(xpath = "//*[text()='Pricing']")
+    @FindBy(xpath = "//div[@class='main-title']")
     WebElement popup_heading;
 
     public String getPopupHeading() throws InterruptedException {
         waitForPageLoaded();
-//        waitForTextToAppear("Pricing");
+        getDriver().manage().window().maximize();
         Thread.sleep(4999);
         return popup_heading.getText();
 
@@ -73,8 +73,7 @@ public class LandingPage extends ExtendedPageObject {
 
     public String getPopupHeading2() throws InterruptedException {
         waitForPageLoaded();
-//        waitForTextToAppear("Pricing");
-        Thread.sleep(4999);
+        waitForTextToAppear("Dashboard",9999);
         return popup_heading2.getText();
 
     }

@@ -17,7 +17,7 @@ public class EndUserSteps extends ExtendedPageObject {
 	public void user_is_on_landing_page() throws InterruptedException {
 		landingPage.openURL();
 
-		Assert.assertEquals(landingPage.getPopupHeading(), "PRICING");
+		Assert.assertEquals(landingPage.getPopupHeading(), "Sign In");
 	}
 
 //	@After
