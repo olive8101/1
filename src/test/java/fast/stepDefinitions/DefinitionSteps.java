@@ -104,21 +104,18 @@ public class DefinitionSteps {
 //test
 
 	@Given("user is on login page")
-	public void user_is_on_login_page() {
-
-
+	public void user_is_on_login_page() throws InterruptedException{
+		steps.user_is_on_login_page();
 	}
 
 	@Given("user click on login button and to open the login field")
-	public void user_click_on_login_button_and_to_open_the_login_field() {
-
-
+	public void user_click_on_login_button_and_to_open_the_login_field() throws InterruptedException{
+		steps.user_click_on_login_button_and_to_open_the_login_field();
 	}
 
-	@Then("home page is displayed")
-	public void home_page_is_open() {
-
-
+	@Then("home page is open")
+	public void home_page_is_open() throws InterruptedException{
+		steps.home_page_is_open();
 	}
 
 }

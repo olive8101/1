@@ -16,7 +16,6 @@ public class EndUserSteps extends ExtendedPageObject {
 	@Step
 	public void user_is_on_landing_page() throws InterruptedException {
 		landingPage.openURL();
-
 		Assert.assertEquals(landingPage.getPopupHeading(), "Sign In");
 	}
 
@@ -103,17 +102,18 @@ public class EndUserSteps extends ExtendedPageObject {
 //test
 
 	@Step("user is on login page")
-	public void user_is_on_login_page() {
-
+	public void user_is_on_login_page() throws InterruptedException{
+		landingPage.openURL();
+		Assert.assertEquals(landingPage.getPopupHeading(), "Sign In");
 	}
 
 	@Step("user click on login button and to open the login field")
-	public void user_click_on_login_button_and_to_open_the_login_field() {
-
+	public void user_click_on_login_button_and_to_open_the_login_field() throws InterruptedException{
+		landingPage.clickLoginBtn();
 	}
 
 	@Step("home page is displayed")
-	public void home_page_is_open() {
-
+	public void home_page_is_open() throws InterruptedException{
+		Assert.assertEquals(landingPage.getPopupHeading2(), "Dashboard");
 	}
 }
