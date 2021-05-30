@@ -80,6 +80,10 @@ public class LandingPage extends ExtendedPageObject {
     public String getPopupHeading2() throws InterruptedException {
         waitForPageLoaded();
         withTimeoutOf(15,TimeUnit.SECONDS).waitForPresenceOf(By.xpath("//div[contains(text(),'Dashboard')]"));
+        int len= getDriver().findElements(By.xpath("(//span[@class='v-btn__content'])")).size();
+        if ((len>0)){
+            getDriver().findElement(By.xpath("(//span[@class='v-btn__content'])[1]")).click();
+        }
         String str = popup_heading2.getText();
         return str;
 
