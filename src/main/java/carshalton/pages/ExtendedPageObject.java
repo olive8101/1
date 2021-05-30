@@ -19,7 +19,6 @@ public class ExtendedPageObject extends PageObject {
     @FindBy(xpath = "//*[@id=\\\"body\\\"]/app-root/div/app-layout/div/app-menu/div/p-scrollpanel/div/div[1]/div/ul/li[2]")
     private WebElementFacade MyTrips;
 
-
     static Logger log = LoggerFactory.getLogger(ExtendedPageObject.class);
 
     public void waitForPageLoaded() throws InterruptedException {

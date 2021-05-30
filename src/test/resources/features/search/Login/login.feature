@@ -6,8 +6,6 @@ Feature: login test
    #And user click on the "New Portal" tab
    #Then user can see the new portal
 
-
-
   Scenario: verify that user is able to login account
    Given user is on login page
    And user click on login button and to open the login field
