@@ -23,7 +23,7 @@ public class LandingPage extends ExtendedPageObject {
             // opt.addArguments("--disable-dev-shm-usage");
         opt.addArguments("window-size=3157,1183");
         opt.addArguments("--kiosk");
-        getDriver().manage().window().maximize();
+        //getDriver().manage().window().maximize();
         if (url == null) {
             throw new InterruptedException("URL is null");
         }
