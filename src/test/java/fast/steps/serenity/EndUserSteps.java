@@ -1,17 +1,17 @@
 package fast.steps.serenity;
 
+import carshalton.pages.LandingPage;
 import carshalton.pages.LoginPage;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
+import carshalton.pages.ManageProduct;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 import carshalton.pages.ExtendedPageObject;
-import carshalton.pages.LandingPage;
 
 public class EndUserSteps extends ExtendedPageObject {
 
 	LandingPage landingPage;
 	LoginPage loginPage;
+	ManageProduct manageProduct;
 
 	@Step
 	public void user_is_on_landing_page() throws InterruptedException {
@@ -107,13 +107,34 @@ public class EndUserSteps extends ExtendedPageObject {
 		Assert.assertEquals(landingPage.getPopupHeading(), "Sign In");
 	}
 
-	@Step("user click on login button and to open the login field")
+	@Step
 	public void user_click_on_login_button_and_to_open_the_login_field() throws InterruptedException{
 		landingPage.clickLoginBtn();
+
 	}
 
-	@Step("home page is displayed")
+	@Step
 	public void home_page_is_open() throws InterruptedException{
 		//Assert.assertEquals(landingPage.getPopupHeading2(), "Dashboard");
+	}
+
+	@Step
+	public void user_click_tab(String string) throws InterruptedException{
+		manageProduct.clickOnmanageProductsTab(string);
+	}
+
+	@Step
+	public void verify_Manage_Product_page_is_displayed() throws InterruptedException{
+		Assert.assertEquals(manageProduct.getManageProductPageHeaing(),"All Products");
+	}
+
+	@Step
+	public void user_click_on_button(String string) throws InterruptedException{
+		manageProduct.clickOnGivenButton(string);
+	}
+
+	@Step
+	public void fill_the_product_name_and_save() throws InterruptedException {
+		manageProduct.fillProductName();
 	}
 }

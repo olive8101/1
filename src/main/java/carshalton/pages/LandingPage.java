@@ -2,7 +2,6 @@ package carshalton.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
-import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,8 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-@DefaultUrl("https://google.co.in")
-public class LandingPage extends ExtendedPageObject {
+public class LandingPage extends ExtendedPageObject{
     public void openURL() throws InterruptedException {
         waitForPageLoaded();
         waitForPageLoaded();
@@ -19,8 +17,8 @@ public class LandingPage extends ExtendedPageObject {
 //      sString url = System.getProperty("URL");
         ChromeOptions opt = new ChromeOptions();
         //opt.addArguments("--no-sandbox");
-          //    opt.addArguments("--headless");
-            // opt.addArguments("--disable-dev-shm-usage");
+        //    opt.addArguments("--headless");
+        // opt.addArguments("--disable-dev-shm-usage");
         opt.addArguments("window-size=3157,1183");
         opt.addArguments("--kiosk");
         //getDriver().manage().window().maximize();
@@ -173,22 +171,11 @@ public class LandingPage extends ExtendedPageObject {
     }
 
 
-
-
-
-
     public void openurlp() throws InterruptedException {
         waitForPageLoaded();
         waitForPageLoaded();
         String url = "https://dev.app.trackmatrix.com/login";
         getDriver().get(url);
-
-    }
-
-    @FindBy(className = "v-btn__content")
-    WebElementFacade log;
-
-    public void user_click_on_login_button_and_to_open_the_login_field() {
 
     }
 

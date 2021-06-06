@@ -29,4 +29,5 @@ public class LoginPage extends ExtendedPageObject{
         withTimeoutOf(5, TimeUnit.SECONDS).waitForPresenceOf(By.id("login-button"));
         login_btn.click();
     }
+
 }

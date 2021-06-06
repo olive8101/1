@@ -118,4 +118,27 @@ public class DefinitionSteps {
 		steps.home_page_is_open();
 	}
 
-}
+	@Then("user click {string} tab")
+	public void user_click_tab(String string) throws InterruptedException{
+		steps.user_click_tab(string);
+	}
+
+	@Then("Verify Manage Product  page is displayed")
+	public void verify_Manage_Product_page_is_displayed() throws InterruptedException{
+		steps.verify_Manage_Product_page_is_displayed();
+	}
+
+	@Then("User click on {string} button")
+	public void user_click_on_button(String string) throws InterruptedException{
+		steps.user_click_on_button(string);
+	}
+
+	@Then("Fill the product name and save")
+	public void fill_the_product_name_and_save() throws InterruptedException {
+		steps.fill_the_product_name_and_save();
+	}
+
+
+
+
+	}
