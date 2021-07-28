@@ -138,7 +138,29 @@ public class DefinitionSteps {
 		steps.fill_the_product_name_and_save();
 	}
 
-
-
-
+	@Then("Verify {string} is displayed")
+	public void verify_is_displayed(String string) throws InterruptedException{
+		steps.verify_is_displayed(string);
 	}
+
+	@Then("user select a template on product")
+	public void user_select_a_template_on_product() throws Throwable{
+		steps.user_select_a_template_on_product();
+	}
+
+	@Then("user click on Save button")
+	public void user_click_on_save_button() throws Throwable{
+		steps.user_click_on_save_button();
+	}
+
+	@Then("user enter the template name")
+	public void user_enter_the_template_name() throws Throwable{
+		steps.user_enter_the_template_name();
+	}
+
+	@Then("user activate the order status")
+	public void user_activate_the_order_status() throws Throwable{
+		steps.user_activate_the_order_status();
+	}
+
+}

@@ -1,17 +1,16 @@
 package fast.steps.serenity;
 
-import carshalton.pages.LandingPage;
-import carshalton.pages.LoginPage;
-import carshalton.pages.ManageProduct;
+import carshalton.pages.*;
+import io.cucumber.java.en.Then;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
-import carshalton.pages.ExtendedPageObject;
 
 public class EndUserSteps extends ExtendedPageObject {
 
 	LandingPage landingPage;
 	LoginPage loginPage;
 	ManageProduct manageProduct;
+	TemplatePage templatePage;
 
 	@Step
 	public void user_is_on_landing_page() throws InterruptedException {
@@ -136,5 +135,30 @@ public class EndUserSteps extends ExtendedPageObject {
 	@Step
 	public void fill_the_product_name_and_save() throws InterruptedException {
 		manageProduct.fillProductName();
+	}
+
+	@Step
+	public void verify_is_displayed(String string) throws InterruptedException{
+		Assert.assertEquals(manageProduct.getSucessMessage(),string);
+	}
+
+	@Step
+	public void user_select_a_template_on_product() throws Throwable{
+		templatePage.selectAFormAndDragAndDrop();
+	}
+
+	@Step
+	public void user_click_on_save_button() {
+		templatePage.clickOnSaveBtn();
+	}
+
+	@Step
+	public void user_enter_the_template_name() throws Throwable{
+		templatePage.enterTemplateName();
+	}
+
+	@Step
+	public void user_activate_the_order_status() throws Throwable{
+		manageProduct.activateTheProductStatus();
 	}
 }

@@ -40,4 +40,17 @@ public class ManageProduct extends ExtendedPageObject{
         testDataSetup.setProductName(productName);
     }
 
+    @FindBy(className = "notification-content")
+    WebElementFacade message_content;
+    public String getSucessMessage() throws InterruptedException {
+        withTimeoutOf(10,TimeUnit.SECONDS).waitForPresenceOf(By.className("notification-content"));
+        String msg = message_content.getText();
+        return msg;
+    }
+
+    public void activateTheProductStatus() throws Throwable{
+        withTimeoutOf(25,TimeUnit.SECONDS).waitForPresenceOf(By.xpath("//input[@role='switch']"));
+        getDriver().findElement(By.xpath("//label[text()='De-activate']")).click();
+    }
+
 }
